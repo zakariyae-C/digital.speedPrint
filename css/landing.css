@@ -1424,6 +1424,9 @@ ol {
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-base);
+  overflow-y: auto; /* the overlay can scroll if needed */
+  overscroll-behavior: contain; /* the page behind doesn't scroll */
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-backdrop.open {
@@ -1440,7 +1443,9 @@ ol {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
   transform: scale(0.95) translateY(10px);
   transition: transform var(--transition-base);
-  overflow: hidden;
+  margin: auto;
+  overflow-y: auto; /* the form scrolls inside the box */
+  overscroll-behavior: contain;
 }
 
 .modal-backdrop.open .modal-dialog {
