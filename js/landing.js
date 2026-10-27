@@ -15,14 +15,14 @@
 const SPEEDPRINT_CONFIG = {
   // Display placeholders (shown in text)
   phoneDisplay: "+212 645-952586",
-  emailDisplay: "contact@speedprintmaroc.com",
+  emailDisplay: "contact@digital.speedprintmaroc.com",
   cityDisplay: "Témara / Rabat, Maroc",
   brandName: "speedPrint Digital",
 
   // Raw values used for links & actions
   // IMPORTANT: For WhatsApp, enter country code + number without '+' or spaces (e.g., '212612345678')
   whatsappRaw: "212645952586",
-  emailRaw: "contact@speedprintmaroc.com",
+  emailRaw: "contact@digital.speedprintmaroc.com",
 
   // Demo Links (relative paths working directly on Cloudflare Pages and Hostinger)
   demoLinks: {
