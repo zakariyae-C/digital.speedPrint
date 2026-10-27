@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#1a120d">
+  <meta name="description" content="L'Atelier Café & Brunch - Menu Digital : Cafés de spécialité, iced lattes, brunch gourmand et pâtisseries artisanales à Rabat.">
+  <title>L'Atelier Café & Brunch – Menu Digital</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- speedPrint Digital Demo Ribbon -->
+  <aside style="background:#281344;color:#FAF8F5;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;border-bottom:1px solid rgba(246,181,68,0.3);position:sticky;top:0;z-index:99999;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="background:#F6B544;color:#281344;font-weight:800;font-size:10px;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:0.04em;">Démo speedPrint</span>
+      <span style="font-weight:600;">Modèle Café &amp; Brunch</span>
+    </div>
+    <a href="../../#modeles" style="color:#F6B544;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;">
+      <span>Retour au site</span> &rarr;
+    </a>
+  </aside>
+<div class="app-wrapper">
+
+  <!-- ==================== VUE 1 : ACCUEIL CATÉGORIES ==================== -->
+  <div id="homeView">
+    <header class="hero-header">
+      <div class="top-nav">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Ouvert · 08h00 – 23h00</span>
+        </div>
+        <div class="top-actions">
+          <button id="themeToggle" class="icon-btn" aria-label="Changer de thème">
+            <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button id="infoBtn" class="icon-btn" aria-label="Infos & Horaires">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-logo-wrap">
+          <img src="img/logo.svg" alt="Logo L'Atelier Café" class="brand-logo">
+        </div>
+        <div class="brand-details">
+          <div class="brand-title-row">
+            <h1>L'Atelier Café</h1>
+            <span class="rating-badge">
+              <svg viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              4.9 <span class="rating-count">(280+ avis)</span>
+            </span>
+          </div>
+          <p class="brand-tagline">Specialty Coffee · Artisanal Bakery · Gourmet Brunch</p>
+          <p class="brand-desc">Grains torréfiés 100% Arabica, extraction maîtrisée, brunch frais tous les jours et douceurs faites maison.</p>
+          
+          <div class="feature-pills">
+            <span class="feat-pill">☕ 100% Arabica</span>
+            <span class="feat-pill">🥐 Fait Maison</span>
+            <span class="feat-pill">📍 Agdal, Rabat</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sticky-nav-bar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="search" placeholder="Rechercher (latte, matcha, avocado toast...)" autocomplete="off">
+        <button id="clearSearchBtn" class="clear-search-btn" aria-label="Effacer" hidden>✕</button>
+      </div>
+      <div class="groups-pills" id="groupChips"></div>
+    </div>
+
+    <main class="main-content">
+      <div class="section-meta-header" id="homeSectionHeader">
+        <h2 class="section-title">Notre Carte</h2>
+        <span class="section-count" id="categoriesCount">6 catégories</span>
+      </div>
+      <div class="categories-cards-grid" id="categoriesGrid"></div>
+      <div class="search-results-section" id="searchResultsSection" hidden>
+        <div class="search-results-header" id="searchResultsHeader"></div>
+        <div class="items-list" id="searchResultsList"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ==================== VUE 2 : DÉTAIL D'UNE CATÉGORIE ==================== -->
+  <div id="detailView" hidden>
+    <header class="detail-top-bar">
+      <a href="#home" class="detail-back-btn" id="backToHomeBtn">
+        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>Retour</span>
+      </a>
+      <h2 class="detail-bar-title" id="detailBarTitle">Catégorie</h2>
+      <button id="detailInfoBtn" class="icon-btn" aria-label="Infos">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </button>
+    </header>
+
+    <div class="sub-category-bar-wrap">
+      <nav class="sub-category-bar" id="subCategoryTabs"></nav>
+    </div>
+
+    <div class="detail-hero-banner" id="detailHeroBanner">
+      <div class="detail-hero-content">
+        <span class="detail-hero-badge" id="detailHeroBadge">Spécialité</span>
+        <h1 class="detail-hero-title" id="detailHeroTitle">Catégorie</h1>
+        <p class="detail-hero-count" id="detailHeroCount"></p>
+      </div>
+    </div>
+
+    <main class="detail-content">
+      <div class="detail-items-container" id="detailItemsList"></div>
+      <div class="quality-footer-card">
+        <div class="quality-icon">☕</div>
+        <div class="quality-text">
+          <strong>Passion & Savoir-faire</strong>
+          <p>Tous nos cafés sont extraits avec des grains de spécialité sélectionnés et du lait frais entier ou végétal (avoine, amande).</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-card">
+      <img src="img/logo.svg" alt="Logo L'Atelier Café" class="footer-logo">
+      <h3>L'Atelier Café &amp; Brunch</h3>
+      <p class="footer-tagline">Votre rendez-vous gourmand au cœur d'Agdal</p>
+      <div class="footer-meta">
+        <p>📍 Avenue Fal Ould Oumeir, Agdal – Rabat</p>
+        <p>🕒 Lundi au Dimanche de 08h00 à 23h00</p>
+      </div>
+      <div class="footer-copy">
+        © <span id="currentYear"></span> L'Atelier Café. Menu digital sur place.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Infos -->
+  <div class="modal-overlay" id="infoModal" hidden>
+    <div class="modal-sheet" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon">ℹ️</span>
+          <h2>Infos &amp; Horaires</h2>
+        </div>
+        <button class="modal-close-btn" id="closeInfoBtn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="info-list-card">
+          <div class="info-row">
+            <div class="info-icon-box">📍</div>
+            <div class="info-meta">
+              <strong>Adresse</strong>
+              <p>Avenue Fal Ould Oumeir, Agdal – Rabat</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon-box">🕒</div>
+            <div class="info-meta">
+              <strong>Horaires</strong>
+              <p>Tous les jours de 08h00 à 23h00</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon-box">📶</div>
+            <div class="info-meta">
+              <strong>Wi-Fi Gratuit</strong>
+              <p>Mot de passe disponible auprès de votre serveur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay lightbox-overlay" id="lightboxModal" hidden>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="closeLightboxBtn">✕</button>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="Photo">
+      </div>
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+        <span id="lightboxPrice" class="lightbox-price-tag"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

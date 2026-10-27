@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#120e0c">
+  <meta name="description" content="Kebab Kamal - Boucherie et Grillade à Témara. Menu digital : Tacos, Chawarma, Burgers, Plats grillés, Paninis, Bocadillos et Jus frais.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Kebab Kamal – Menu Digital | Boucherie & Grillade</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- speedPrint Digital Demo Ribbon -->
+  <aside style="background:#281344;color:#FAF8F5;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;border-bottom:1px solid rgba(246,181,68,0.3);position:sticky;top:0;z-index:99999;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="background:#F6B544;color:#281344;font-weight:800;font-size:10px;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:0.04em;">Démo speedPrint</span>
+      <span style="font-weight:600;">Modèle Fast-Food &amp; Snack</span>
+    </div>
+    <a href="../../#modeles" style="color:#F6B544;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;">
+      <span>Retour au site</span> &rarr;
+    </a>
+  </aside>
+<div class="app-wrapper">
+
+  <!-- ======================================================================
+       VUE 1 : ACCUEIL / LISTE DES CATÉGORIES
+       ====================================================================== -->
+  <div id="homeView">
+
+    <!-- Hero & Brand Header -->
+    <header class="hero-header">
+      <div class="hero-bg">
+        <div class="hero-glow"></div>
+      </div>
+
+      <!-- Top Utility Bar -->
+      <div class="top-nav">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Ouvert 7j/7 · 11h30 – 01h00</span>
+        </div>
+        <div class="top-actions">
+          <button id="themeToggle" class="icon-btn" aria-label="Changer de thème" title="Thème sombre / clair">
+            <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button id="infoBtn" class="icon-btn" aria-label="Infos & Horaires" title="Infos & Horaires">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Brand Card -->
+      <div class="brand-card">
+        <div class="brand-logo-wrap">
+          <img src="img/logo.webp" alt="Logo Kebab Kamal" class="brand-logo" onerror="this.src='img/logo.webp'">
+          <!-- <span class="halal-badge" title="Viandes 100% Halal">حلال</span> -->
+        </div>
+        <div class="brand-details">
+          <div class="brand-title-row">
+            <h1>Ahmed Burger</h1>
+          </div>
+          <p class="arabic-tagline">هنا كتسالي الهدرة، وتبدا البنة</p>
+          <p class="brand-desc">Snack - tacos, chawarma, burgers, plats et jus frais.</p>
+
+          <!-- Badges -->
+          <div class="feature-pills">
+            <!-- <span class="feat-pill"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Boucherie Fraîche</span>
+            <span class="feat-pill"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Braise & Grillades</span> -->
+            <span class="feat-pill"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>Rabat</span>
+          </div>
+
+          <!-- Quick Action Links -->
+          <div class="quick-contact-bar">
+            <a href="#" class="action-btn btn-call">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>06XX-XXXXXXXX</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="action-btn btn-map">
+              <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              <span>Itinéraire</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sticky Filter & Search Bar -->
+    <div class="sticky-nav-bar">
+      <!-- Search Input -->
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="search" placeholder="Rechercher un plat (tacos, burger, kefta...)" autocomplete="off">
+        <button id="clearSearchBtn" class="clear-search-btn" aria-label="Effacer" hidden>✕</button>
+      </div>
+
+      <!-- Meal Groups Filter (Tout / Repas / Boissons) -->
+      <div class="groups-pills" id="groupChips">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Main Categories Grid -->
+    <main class="main-content">
+      
+      <!-- Section header -->
+      <div class="section-meta-header" id="homeSectionHeader">
+        <h2 class="section-title">Choisissez une Catégorie</h2>
+        <span class="section-count" id="categoriesCount">13 catégories</span>
+      </div>
+
+      <!-- Cards Grid of Categories -->
+      <div class="categories-cards-grid" id="categoriesGrid">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Search Results Container (Active when searching) -->
+      <div class="search-results-section" id="searchResultsSection" hidden>
+        <div class="search-results-header" id="searchResultsHeader"></div>
+        <div class="items-list" id="searchResultsList"></div>
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- ======================================================================
+       VUE 2 : DÉTAIL D'UNE CATÉGORIE (AFFICHAGE DES PLATS & PRIX)
+       ====================================================================== -->
+  <div id="detailView" hidden>
+
+    <!-- Top Sticky Bar with Back Button -->
+    <header class="detail-top-bar">
+      <a href="#home" class="detail-back-btn" id="backToHomeBtn" aria-label="Retour au menu">
+        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>Retour</span>
+      </a>
+      <h2 class="detail-bar-title" id="detailBarTitle">Catégorie</h2>
+      <button id="detailInfoBtn" class="icon-btn detail-info-btn" aria-label="Infos restaurant" title="Infos">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </button>
+    </header>
+
+    <!-- Quick Carousel to switch to other categories without going back -->
+    <div class="sub-category-bar-wrap">
+      <nav class="sub-category-bar" id="subCategoryTabs">
+        <!-- Rendered by JS -->
+      </nav>
+    </div>
+
+    <!-- Category Hero Banner with High-Res Image -->
+    <div class="detail-hero-banner" id="detailHeroBanner">
+      <div class="detail-hero-content">
+        <!-- <span class="detail-hero-badge" id="detailHeroBadge">Spécialité</span> -->
+        <h1 class="detail-hero-title" id="detailHeroTitle">Tacos Français</h1>
+        <p class="detail-hero-count" id="detailHeroCount">11 plats disponibles</p>
+      </div>
+    </div>
+
+    <!-- Category Dishes List (Displaying Dishes, Descriptions & Prices Only) -->
+    <main class="detail-content">
+      <div class="detail-items-container" id="detailItemsList">
+        <!-- Dishes rendered by JS -->
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- ======================================================================
+       FOOTER UNIFIÉ
+       ====================================================================== -->
+  <footer class="app-footer">
+    <div class="footer-card">
+      <img src="img/logo.svg" alt="Logo Kebab Kamal" class="footer-logo" onerror="this.src='img/logo.webp'">
+      <h3>Ahmed Burger</h3>
+      <p class="footer-tagline">هنا كتسالي الهدرة، وتبدا البنة</p>
+      <div class="footer-meta">
+        <p>📍 Rabat</p>
+        <p>📞 06XX-XXXXXX · WhatsApp : 06XXXXXXXX</p>
+        <p>🕒 Ouvert 7j/7 de 11h30 à 01h00</p>
+      </div>
+      <div class="footer-copy">
+        © <span id="currentYear"></span> Ahmed Burger. Menu digital sur place.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ======================================================================
+       MODAL 1 : INFOS & HORAIRES DU RESTAURANT
+       ====================================================================== -->
+  <div class="modal-overlay" id="infoModal" hidden>
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon">ℹ️</span>
+          <h2 id="infoModalTitle">Infos & Horaires</h2>
+        </div>
+        <button class="modal-close-btn" id="closeInfoBtn" aria-label="Fermer">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="info-list-card">
+          
+          <div class="info-row">
+            <div class="info-icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="info-meta">
+              <strong>Adresse</strong>
+              <p>Rabat</p>
+              <a href="#" target="_blank" rel="noopener" class="text-link">Ouvrir dans Google Maps →</a>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="info-meta">
+              <strong>Horaires de service</strong>
+              <p>Lundi au Dimanche : <strong>11h30 – 01h00</strong></p>
+              <p class="sub-text">Service continu midi & soir sans interruption</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon-box"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="info-meta">
+              <strong>Téléphone</strong>
+              <p><a href="tel:0650832612" class="phone-link">06XX-XXXXXX</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       MODAL 2 : LIGHTBOX (AGRANDISSEMENT PHOTO EN PLEIN ÉCRAN)
+       ====================================================================== -->
+  <div class="modal-overlay lightbox-overlay" id="lightboxModal" hidden>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="closeLightboxBtn" aria-label="Fermer">✕</button>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="Photo du plat">
+      </div>
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+        <span id="lightboxPrice" class="lightbox-price-tag"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
