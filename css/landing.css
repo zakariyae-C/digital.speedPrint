@@ -1791,6 +1791,10 @@ ol {
     display: none;
   }
 
+  .btn-sm {
+    font-size: 0.77rem;
+  }
+
   .nav-toggle {
     display: flex;
   }
